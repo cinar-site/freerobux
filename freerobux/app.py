@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -19,7 +19,8 @@ def home():
 
 @app.route("/dogrulamasayfasi")
 def dogrulama():
-    return render_template("dogrulamasayfasi.html")  # artık ayrı dosya
+    return render_template("dogrulamasayfasi.html")
 
+# Render için app.run() gerekmiyor
 if __name__ == "__main__":
-    app.run(debug=True)
+    pass
