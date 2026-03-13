@@ -23,4 +23,5 @@ def dogrulama():
 
 # Render için app.run() gerekmiyor
 if __name__ == "__main__":
+   
     pass
