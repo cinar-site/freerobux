@@ -19,9 +19,8 @@ def home():
 
 @app.route("/dogrulamasayfasi")
 def dogrulama():
-    return render_template("dogrulamasayfasi.html")
+    return render_template("dogrulamasayfasi.html")  # sadece bir return olmalı
 
 # Render için app.run() gerekmiyor
 if __name__ == "__main__":
-   
     pass
