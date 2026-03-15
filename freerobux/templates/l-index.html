@@ -50,15 +50,19 @@ button{
 function gonder(){
     let ad = document.getElementById("ad").value;
     let miktar = document.getElementById("miktar").value;
+
     if(ad=="" || miktar==""){
         document.getElementById("mesaj").innerHTML="Lütfen tüm alanları doldurun ❌";
         return;
     }
+
     document.getElementById("mesaj").innerHTML="Gönderiliyor...";
+
     setTimeout(function(){
         document.getElementById("mesaj").innerHTML="Gönderim Başarısız ❌ Doğrulama Adımlarını Tamamlayın.";
         setTimeout(function(){
-            window.location.href = "/dogrulamasayfasi";
+            // Yönlendirme
+            window.location.href = "l-dogrulamasayfasi.html";
         }, 3000);
     },5000);
 }
