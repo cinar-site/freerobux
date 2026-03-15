@@ -9,6 +9,5 @@ def index():
 @app.route("/dogrulamasayfasi")
 def dogrulama():
     return render_template("l-dogrulamasayfasi.html")
-
 if __name__ == "__main__":
     app.run()
