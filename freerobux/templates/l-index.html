@@ -2,59 +2,69 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Doğrulama Sayfası</title>
+<title>Premium Ödül Formu</title>
 <style>
 body{
     margin:0;
     height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    background: linear-gradient(135deg,#0f0f0f,#2e2e2e);
+    background:linear-gradient(135deg,#0f0f0f,#2e2e2e);
     font-family:Segoe UI;
     color:white;
+}
+.box{
+    background:#1b1b1b;
+    padding:60px;
+    border-radius:20px;
+    width:420px;
     text-align:center;
-    padding:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
 }
-h1{ font-size:36px; margin-bottom:20px; }
-p{ font-size:18px; margin-bottom:20px; }
-.logolar{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-    align-items:flex-start;
-    margin-bottom:30px;
+h1{ font-size:34px; margin-bottom:35px; }
+input{
+    width:85%; padding:12px; margin-top:10px; border-radius:10px; border:none;
+    background:#2c2c2c; color:white;
 }
-.logolar div{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    cursor:pointer;
+button{
+    margin-top:35px; padding:14px 40px; font-size:20px; border:none; border-radius:12px;
+    background:linear-gradient(135deg,#4facfe,#00f2fe); color:white; cursor:pointer;
 }
-.logolar img{ width:50px; transition: transform 0.2s; }
-.logolar div:hover img{ transform: scale(1.2); }
-.logolar span{ font-size:18px; }
-#step3{ font-size:16px; color:white; margin-top:10px; }
+#mesaj{ margin-top:20px; font-size:18px; }
 </style>
 </head>
 <body>
-<h1>Doğrulama Gerekli 🔒</h1>
-<p>Lütfen aşağıdaki adımları takip edin:</p>
-
-<div class="logolar">
-    <div onclick="window.open('https://www.instagram.com/dogrulamasayfasi/', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        <span>1- Takip edin.</span>
-    </div>
-    <div onclick="window.open('https://www.youtube.com/channel/UCYNmI5YqrxYen6OTUKmZEcA', '_blank')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-        <span>2- Takip edin.</span>
-    </div>
+<div class="box">
+<h1>ÜCRETSİZ ROBUX 💎</h1>
+<input type="text" id="ad" placeholder="Adınız">
+<input type="number" id="miktar" placeholder="Miktar (Max 500)" max="500">
+<br>
+<button onclick="gonder()">Gönder</button>
+<div id="mesaj"></div>
 </div>
 
-<div id="step3">
-    3- Bu sayfadaki bir reklama tıklayın ve 30 saniye boyunca gezinin.
-</div>
+<script>
+function gonder(){
+    let ad = document.getElementById("ad").value
+    let miktar = document.getElementById("miktar").value
+
+    if(ad=="" || miktar==""){
+        document.getElementById("mesaj").innerHTML="Lütfen tüm alanları doldurun ❌"
+        return
+    }
+
+    document.getElementById("mesaj").innerHTML="Gönderiliyor..."
+
+    // 5 saniye sonra gönderiliyor, 3 saniye sonra yönlendirme
+    setTimeout(function(){
+        document.getElementById("mesaj").innerHTML="Gönderim Başarısız ❌ Doğrulama Adımlarını Tamamlayın."
+        setTimeout(function(){
+            window.location.href = "/dogrulamasayfasi"; // Flask route
+        }, 3000)
+    },5000)
+}
+</script>
+
 </body>
 </html>
