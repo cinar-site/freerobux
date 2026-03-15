@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Doğrulama Sayfası</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#0f0f0f,#2e2e2e);
+    font-family:Segoe UI;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+h1{
+    font-size:36px;
+    margin-bottom:20px;
+}
+p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+.logolar{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    align-items:flex-start;
+    margin-bottom:30px;
+}
+.logolar div{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    cursor:pointer;
+}
+.logolar img{
+    width:50px;
+    transition: transform 0.2s;
+}
+.logolar div:hover img{
+    transform: scale(1.2);
+}
+.logolar span{
+    font-size:18px;
+}
+#step3{
+    font-size:16px;
+    color:white;
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Doğrulama Gerekli 🔒</h1>
+<p>Lütfen aşağıdaki adımları takip edin:</p>
+
+<div class="logolar">
+    <div onclick="window.open('https://www.instagram.com/dogrulamasayfasi/', '_blank')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        <span>1- Takip edin.</span>
+    </div>
+    <div onclick="window.open('https://www.youtube.com/channel/UCYNmI5YqrxYen6OTUKmZEcA', '_blank')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+        <span>2- Takip edin.</span>
+    </div>
+</div>
+
+<div id="step3">
+    3- Bu sayfadaki bir reklama tıklayın ve 30 saniye boyunca gezinin.
+</div>
+
+</body>
+</html>
